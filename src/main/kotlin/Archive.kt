@@ -41,10 +41,10 @@ class Archives() : Navigation {
         println("Введите имя заметки")
         println("Для выхода введите 'Отмена'")
         while (true){
-           var a = console.nextLine()
+           val a = console.nextLine()
            if(a.equals("Отмена",true)) break
            val note = getNoteFromList(notes!!,a)
-           if (notes?.contains(note)!!) {
+           if (notes.contains(note)) {
               actualNote = note
               break
            } else {
