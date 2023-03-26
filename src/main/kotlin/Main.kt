@@ -1,5 +1,22 @@
+import java.util.Scanner
+import java.util.SplittableRandom
+
 fun main() {
-    // ваш код начнется здесь
-    // вы не должны ограничиваться только классом Main и можете создавать свои классы по необходимости
-    println("Привет")
+    start()
 }
+
+
+
+fun start(){
+   val navigation = Navigation()
+   navigation.snowFirstScreen()
+   navigation.chooseStep()
+
+}
+
+
+
+fun readNote(){
+
+}
+
