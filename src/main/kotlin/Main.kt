@@ -1,4 +1,4 @@
-import java.util.*
+import java.util.Scanner
 
 fun main() {
     start()
@@ -13,15 +13,13 @@ fun start() {
 }
 
 
-fun stop(){
-    println("Спасибо что воспользовались программой по хранению заметок")
-}
-fun getCommandConsole(): Int {
+fun stop() = println("Спасибо что воспользовались программой по хранению заметок")
 
-    var console = Scanner(System.`in`)
+fun getCommandConsole(): Int {
+    val console = Scanner(System.`in`)
     while (true) {
         if (console.hasNextInt()) {
-            var a = console.nextInt()
+            val a = console.nextInt()
             when(a){
                 1 -> return 1
                 2 -> return 2
@@ -33,7 +31,5 @@ fun getCommandConsole(): Int {
             console.next()
         }
     }
-
-
 }
 

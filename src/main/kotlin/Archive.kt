@@ -5,7 +5,7 @@ class Archives() : Navigation {
     private var noteList = mutableListOf<Note>()
     private var archive: MutableMap<String, MutableList<Note>> = mutableMapOf()
     private var actualKey:String = ""
-    private lateinit var actualNote:Note
+    private  var actualNote: Note? = null
 
 
     private fun makeArchive() {
@@ -51,8 +51,14 @@ class Archives() : Navigation {
                println("Вы ввели неверное имя")
            }
         }
-        actualNote.step()
-        actualNote.navigate(getCommandConsole())
+        if (actualNote != null) {
+            actualNote?.step()
+            actualNote?.navigate(getCommandConsole())
+        } else {
+            println("Вы отменили ввод!")
+            step(false)
+            navigate(getCommandConsole(),false)
+        }
     }
     private fun createNote() {
         println("Введите имя заметки")
@@ -64,9 +70,7 @@ class Archives() : Navigation {
         println("Заметка создана успешно")
         step(false)
         navigate(getCommandConsole(),false)
-
     }
-
 
     override fun navigate(num: Int, flag: Boolean) {
         if (flag) {
